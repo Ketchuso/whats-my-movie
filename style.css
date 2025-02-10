@@ -3,5 +3,12 @@ h1{
     text-align: center ;
 }
 h3 {
-    color:#C8D1F7
+    font-size: small;
+    color:#C8D1F7;
+    text-align: right;
+    margin-right:40.4%;
+    margin-top: -20px;
+}
+body{
+    background-color: #292C33;
 }
