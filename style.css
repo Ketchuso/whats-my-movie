@@ -2,6 +2,11 @@ h1{
     color:#C8D1F7;
     font-size: 50px ;
 }
+
+h2{
+    color:#959BB8;
+}
+
 h3 {
     font-size:large;
     color:#C8D1F7;
@@ -18,12 +23,25 @@ h3 {
 
 #Enter{
     text-align: center;
+    color:#959BB8;
     margin-right: 47%;
     margin-top: 15px;
 }
 
 #Movie{
     margin-left: 22%;
+}
+
+#SeenThisToo{
+    text-align: center;
+    margin-right: 47%;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+#player{
+    position: relative;
+    left: 15%;
 }
 
 body{
