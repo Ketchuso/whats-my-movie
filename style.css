@@ -1,6 +1,7 @@
 h1{
     color:#C8D1F7;
     font-size: 50px ;
+    font-stretch: expanded;
 }
 
 h2{
@@ -24,24 +25,38 @@ h3 {
 #Enter{
     text-align: center;
     color:#959BB8;
-    margin-right: 47%;
-    margin-top: 15px;
+    margin-right: 25%;
+    margin-top: 50px;
 }
 
 #Movie{
-    margin-left: 22%;
+    margin-left: 35.2%;
 }
 
 #SeenThisToo{
     text-align: center;
-    margin-right: 47%;
-    margin-top: 30px;
     font-size: 30px;
 }
 
 #player{
     position: relative;
     left: 15%;
+}
+
+#Lookup{
+    margin-bottom: 50px;
+    margin-left: 35.2%
+}
+
+/*.flex-Div{
+    display:flex;
+    justify-content: space-evenly;
+}
+*/
+.Trailer-Details{
+    text-align: right;
+    margin-right: 30%;
+    margin-top: -400px;
 }
 
 body{
