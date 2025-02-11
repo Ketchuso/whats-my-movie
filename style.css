@@ -48,18 +48,28 @@ h3 {
     margin-left: 35.2%
 }
 
-/*.flex-Div{
-    display:flex;
-    justify-content: space-evenly;
-}
-*/
-.Trailer-Details{
+#Trailer-Details{
     text-align: right;
     margin-right: 30%;
     margin-top: -400px;
+}
+
+#find-my-movie{
+    text-align: center;
+    margin-right: 30%;
+    margin-top: 400px;
+    font-size: 40px;
+}
+
+.dropdown-filters{
+    text-align: ;
+    margin-right: 50%;
+    margin-top: 40px;
+    font-size: 50px;
 }
 
 body{
     font-family: 'Irish Grover';
     background-color: #292C33;
 }
+
