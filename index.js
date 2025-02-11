@@ -1,3 +1,6 @@
+
+
+
 //function clearPage{ 
 //which will clear everything except for the h1 heding on the page}
 //code goes here:
@@ -29,7 +32,5 @@
 
 //addEventListener #4?
 //submit 'form' of filters
-
-//Do we need anything else?
 
 

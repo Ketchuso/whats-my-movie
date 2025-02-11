@@ -56,6 +56,7 @@ h1 {
 /* The div container which contains the Movie-Trailer box and the Movie-Details box */
 .container {
     display: flex;
+    height: 50vh;
     margin-top: 100px;
     justify-content: center; /* Centers the combined width */
     align-items: center; /* Aligns them vertically */
@@ -77,8 +78,8 @@ h1 {
 
 /* Movie Trailer Box */
 .box-trailer {
-    width: 700px;
-    height: 400px;
+    /* width: 700px;
+    height: 400px; */
     background-color: black;
     border: 7px solid white;
     border-radius: 20px;
@@ -94,8 +95,8 @@ h1 {
 
 /* Movie Details Box */
 .box-details {
-    width: 450px;
-    height: 365px;
+    /* width: 450px;
+    height: 365px; */
     background-color: darkred;
     transition: background-color 0.5s ease-in-out;
     padding: 20px;
