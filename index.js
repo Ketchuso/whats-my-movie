@@ -7,6 +7,7 @@ const seen = document.getElementById("seen-this-one");
 //function clearPage{ 
 //which will clear everything except for the h1 heding on the page}
 //code goes here:
+
 function clearScreen(){
     // if(browse) {
     //     browse.remove();
@@ -25,7 +26,6 @@ function clearScreen(){
     // }
 }
 
-
 //addEvenListener # 1?
 //listens for click on 'Browse Movies"
 //calls the clearPage function()
@@ -43,6 +43,33 @@ function clearScreen(){
 //stretch goal: if it's not in the data base, we allow the user to submit the title online, for us to add
 //code goes here:
 
+function findForm(){
+    const form = document.getElementById("lookup-form");
+
+    form.addEventListener("submit", e => movieLookup(e));
+}
+
+function movieLookup(e){
+    e.preventDefault();
+    clearScreen();
+    fetch("http://localhost:3000/movies")
+    .then(resp => resp.json())
+    .then(movies => findMovie(e, movies))
+    .catch(error => console.log(error));
+}
+
+function findMovie(e, movies){
+    const player = document.getElementById("player");
+    const found = movies.find(movie => movie.title === e.target.lookup.value)
+    if (found){
+        player.src = found.trailer;
+    }
+    else {
+        console.log("Movie not found")
+    }
+}
+
+findForm();
 //add.EventListener #3
 //listens for a 'mousover' over the id="movie-details" box
 //calls the clearPage function()
