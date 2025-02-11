@@ -1,4 +1,6 @@
 
+
+
 //function clearPage{ 
 //which will clear everything except for the h1 heding on the page}
 //code goes here:
