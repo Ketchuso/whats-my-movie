@@ -1,75 +1,159 @@
-h1{
-    color:#C8D1F7;
-    font-size: 50px ;
-    font-stretch: expanded;
-}
-
-h2{
-    color:#959BB8;
-}
-
-h3 {
-    font-size:large;
-    color:#C8D1F7;
-}
-#Title{
+/* Page Title */
+h1 {
     text-align: center;
+    font-size: 125px;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #C8D1F7;
+    padding: 0px;
+    position: relative; /* Needed for positioning "Browse Movies" */
 }
 
-#Browse{
-    text-align: right;
-    margin-right:35%;
-    margin-top: -35px;
+/* "Browse Movies" Heading - Aligned to Right Edge of Title */
+#browse {
+    font-size: 40px;
+    font-weight: bold;
+    color: #C8D1F7;
+    position: absolute;
+    right: 25%;
+    top: 120px; /* Adjusted to position it just below the title */
+    cursor: pointer;
 }
 
-#Enter{
+/* "Enter Title" Heading - Aligned to Left Edge of Title */
+#enter-title {
+    font-size: 40px;
+    color: #C8D1F7;
+    margin-top: -60px;
+    margin-left: 25%;
+}
+
+/* Movie Lookup Input Field - As Wide as the h1 Title */
+#lookup {
+    display: block;
+    width: 50%; /* Makes it as wide as the title */
+    height: 30px;
+    padding: 10px;
+    font-size: 25px;
+    color: #C8D1F7;
+    font-weight: bold;
+    background-color: #292C33;
+    border: 7px solid #75798b;
+    border-radius: 20px;
+    /* top: -30px; */
+    /* margin-top: -50px; */
+    margin: 0px auto;
+}
+
+/* "Seen This One?" Heading */
+#seen-this-one {
     text-align: center;
-    color:#959BB8;
-    margin-right: 25%;
+    font-size: 60px;
+    color: #C8D1F7;
+    margin-top: 60px;
+}
+
+/* The div container which contains the Movie-Trailer box and the Movie-Details box */
+.container {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center; /* Centers the combined width */
+    align-items: center; /* Aligns them vertically */
+    gap: 25px; /* Increased space between trailer and details */
+    width: 80%;
+    max-width: 1300px;
+    margin: 50px auto; /* Centers container */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Shared Box Styles (Ensures Both Boxes Have the Same Height) */
+.box-trailer, .box-details {
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Movie Trailer Box */
+.box-trailer {
+    width: 700px;
+    height: 400px;
+    background-color: black;
+    border: 7px solid white;
+    border-radius: 20px;
+}
+
+/* Make iframe fill the trailer box */
+.box-trailer iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the box */
+    border-radius: 10px;
+}
+
+/* Movie Details Box */
+.box-details {
+    width: 450px;
+    height: 365px;
+    background-color: darkred;
+    transition: background-color 0.5s ease-in-out;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border: 7px solid white;
+    display: flex;
+    flex-direction: column; /* Ensures content stacks properly */
+    justify-content: center;
+}
+
+/* Ensure details box text is formatted properly */
+.box-details p {
+    margin: 10px 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Hover effect for details box */
+.box-details:hover {
+    background-color: red;
+}
+
+/* "Find My Movie!" Heading */
+#find-my-movie {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #C8D1F7;
     margin-top: 50px;
 }
 
-#Movie{
-    margin-left: 35.2%;
-}
-
-#SeenThisToo{
+/* Dropdown Menus (Filters) */
+.dropdown-filters {
+    display: block;
+    width: 700px;
+    height: 50px;
+    padding: 10px;
+    font-size: 25px;
+    color: #C8D1F7;
+    font-weight: bold;
+    background-color: #292C33;
+    /*border: 2px solid #C8D1F7;*/
+    border: 3px solid #75798b;
+    border-radius: 20px;
+    margin: 10px auto; /* space between the dropdown boxes */
     text-align: center;
-    font-size: 30px;
+    cursor: pointer;
 }
 
-#player{
-    position: relative;
-    left: 15%;
+/* Style for Disabled Dropdown Options */
+.dropdown-filters option:disabled {
+    color: gray;
+    font-style: italic;
 }
 
-#Lookup{
-    margin-bottom: 50px;
-    margin-left: 35.2%
-}
-
-#Trailer-Details{
-    text-align: right;
-    margin-right: 30%;
-    margin-top: -400px;
-}
-
-#find-my-movie{
-    text-align: center;
-    margin-right: 30%;
-    margin-top: 400px;
-    font-size: 40px;
-}
-
-.dropdown-filters{
-    text-align: ;
-    margin-right: 50%;
-    margin-top: 40px;
-    font-size: 50px;
-}
-
-body{
-    font-family: 'Irish Grover';
+/* Body Styling */
+body {
+    font-family: 'Irish Grover', sans-serif;
     background-color: #292C33;
 }
-
