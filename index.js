@@ -59,10 +59,22 @@ function movieLookup(e){
 }
 
 function findMovie(e, movies){
-    const player = document.getElementById("player");
-    const found = movies.find(movie => movie.title === e.target.lookup.value)
+    let image = document.getElementById("Find-Image");
+    let title = document.getElementById("Find-Title");
+    let rating = document.getElementById("Find-Rating");
+    let genre = document.getElementById("Find-Genre");
+    let trailer = document.getElementById("Find-Trailer");
+    let cast = document.getElementById("Find-Cast");
+    let synopsis = document.getElementById("Find-Synopsis");
+    let found = movies.find(movie => movie.title === e.target.lookup.value)
     if (found){
-        player.src = found.trailer;
+        image.src = found.image;
+        title.textContent = found.title; 
+        rating.textContent = found.rating;
+        genre.textContent = found.genre;
+        trailer.href = found.trailer;
+        cast.textContent = found.cast;
+        synopsis.textContent = found.synopsis;
     }
     else {
         console.log("Movie not found")

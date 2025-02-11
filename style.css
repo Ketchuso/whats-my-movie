@@ -153,7 +153,22 @@ h1 {
     font-style: italic;
 }
 
-/* Body Styling */
+.hidden{
+    /* display:none; */
+    padding: 27%;
+    margin-top: -22%;
+    color:#C8D1F7;
+}
+
+.Find-Text{
+    margin-left: 45%;
+    margin-top: -40%;
+}
+
+#Find-Rating{
+    margin-top: 30px;
+}
+
 body {
     font-family: 'Irish Grover', sans-serif;
     background-color: #292C33;
