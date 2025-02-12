@@ -112,13 +112,13 @@ findForm();
 
 // example
 //listens for a 'mousover' over the id="movie-details" box
-//const myDiv = document.getElementById("myDiv");
-// myDiv.addEventListener ("mouseover", function(event) {
-// event.target.style.backgroundColor = "lightblue";
-// });
-// myDiv.addEventListener("mouseout", function(event) {
-// event.target.style.backgroundColor = "white";
-// });
+const myDiv = document.getElementById("movie-details");
+myDiv.addEventListener("mouseover", function(event) {
+event.target.style.backgroundColor = "lightblue";
+});
+myDiv.addEventListener("mouseout", function(event) {
+event.target.style.backgroundColor = "white";
+});
 
 // example
 //calls the clearPage function()
