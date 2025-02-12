@@ -53,7 +53,6 @@ function findForm(){
 
 function movieLookup(e){
     e.preventDefault();
-    clearScreen();
     fetch("http://localhost:3000/movies")
     .then(resp => resp.json())
     .then(movies => findMovie(e, movies))
@@ -70,8 +69,8 @@ function findMovie(e, movies){
     let synopsis = document.getElementById("Find-Synopsis");
     let hiddenDiv = document.querySelector(".Hidden-Div");
     let found = movies.find(movie => movie.title === e.target.lookup.value)
-
     if (found){
+        clearScreen();
         // for(let i = 0; i< hidden.length; i++){
         //     hidden[i].classList.remove("hidden");
         //     hidden[i].classList.add("shown");
@@ -85,13 +84,10 @@ function findMovie(e, movies){
         trailer.href = found.trailer;
         cast.textContent = `Cast: ${found.cast}`;
         synopsis.textContent = `Synopsis: ${found.synopsis}`;
+        goBack(hiddenDiv);
     }
     else {
-        
-        backButton.classList.remove("Hidden-Div");
-        backButton.classList.add("shown");
-        console.log("Movie not found")
-        goBack(hiddenDiv);
+        alert("Error: Movie not found")
     }
 }
 
@@ -103,7 +99,7 @@ function goBack(hiddenDiv){
         
         document.body.append(savedSeen);
         savedEnterTitle.forEach(el => document.body.append(el))
-        savedContainer.forEach(el => document.body.append(el))
+        savedContainer.forEach(el => document.body.append(el)) 
     })
 }
 findForm();
