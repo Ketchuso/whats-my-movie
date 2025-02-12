@@ -2,25 +2,27 @@ const browse = document.getElementById("browse")
 const enterTitle = document.getElementsByClassName("enter-title");
 const container = document.getElementsByClassName("container");
 const seen = document.getElementById("seen-this-one");
+let backButton = document.getElementById("Back-Button");
 // const dropdowns = document.getElementsByClassName("dropdowns")
 
 //function clearPage{ 
 //which will clear everything except for the h1 heding on the page}
 //code goes here:
 
+let savedEnterTitle, savedContainer, savedScreen;
+
 function clearScreen(){
     // if(browse) {
     //     browse.remove();
     // }
-    if(seen){
-        seen.remove();
-    }
-    for(let i = 0; i < enterTitle.length; i++){
-        enterTitle[i].remove();
-    }
-    for(let i = 0; i < container.length; i++){
-        container[i].remove();
-    }
+    savedEnterTitle = Array.from(enterTitle);
+    savedContainer = Array.from(container);
+    savedSeen = seen;
+
+    savedSeen.remove();
+    savedEnterTitle.forEach(el => el.remove());
+    savedContainer.forEach(el => el.remove());
+
     // for(let i = 0; i < dropdowns.length; i++){
     //     dropdowns[i].remove();
     // }
@@ -46,6 +48,7 @@ function findForm(){
     const form = document.getElementById("lookup-form");
 
     form.addEventListener("submit", e => movieLookup(e));
+    form.clear();
 }
 
 function movieLookup(e){
@@ -75,7 +78,6 @@ function findMovie(e, movies){
         // }
         hiddenDiv.classList.remove("Hidden-Div");
         hiddenDiv.classList.add("shown");
-
         image.src = found.image;
         title.textContent = found.title; 
         rating.textContent = found.rating;
@@ -84,12 +86,28 @@ function findMovie(e, movies){
         console.log(found.trailer);
         cast.textContent = found.cast;
         synopsis.textContent = found.synopsis;
+        goBack(hiddenDiv);
     }
     else {
+        
+        backButton.classList.remove("Hidden-Div");
+        backButton.classList.add("shown");
         console.log("Movie not found")
+        goBack(hiddenDiv);
     }
 }
 
+function goBack(hiddenDiv){
+    backButton.addEventListener("click", () => {
+        console.log("I was clicked")
+        hiddenDiv.classList.remove("shown");
+        hiddenDiv.classList.add("Hidden-Div");
+        
+        document.body.append(savedSeen);
+        savedEnterTitle.forEach(el => document.body.append(el))
+        savedContainer.forEach(el => document.body.append(el))
+    })
+}
 findForm();
 //add.EventListener #3
 //listens for a 'mousover' over the id="movie-details" box
