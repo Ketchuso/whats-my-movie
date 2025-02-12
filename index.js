@@ -151,3 +151,29 @@ findForm();
 //will grab the <h2> and <p> tags in the "movie-details" div and console log the information on the page
 //will contain an addEventListener for a click on the thumbs or thumbs button
 //code goes here:
+
+// example
+//listens for a 'mousover' over the id="movie-details" box
+//const myDiv = document.getElementById("myDiv");
+// myDiv.addEventListener ("mouseover", function(event) {
+// event.target.style.backgroundColor = "lightblue";
+// });
+// myDiv.addEventListener("mouseout", function(event) {
+// event.target.style.backgroundColor = "white";
+// });
+
+// example
+//calls the clearPage function()
+//clearScreen()
+
+// example
+//will grab the <h2> and <p> tags in the "movie-details" div and console log the information on the page
+// const element = document.getElementsByTagName("p")
+// const element = document.getElementsByTagName("h2")
+// console.log(element)
+// console.log(element1)
+
+//addEventListener #4?
+//submit 'form' of filters
+
+
