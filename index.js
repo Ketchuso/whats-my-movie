@@ -3,6 +3,7 @@ const enterTitle = document.getElementsByClassName("enter-title");
 const container = document.getElementsByClassName("container");
 const seen = document.getElementById("seen-this-one");
 let backButton = document.getElementById("Back-Button");
+const form = document.getElementById("lookup-form");
 // const dropdowns = document.getElementsByClassName("dropdowns")
 
 //function clearPage{ 
@@ -45,10 +46,7 @@ function clearScreen(){
 //stretch goal: if it's not in the data base, we allow the user to submit the title online, for us to add
 //code goes here:
 function findForm(){
-    const form = document.getElementById("lookup-form");
-
     form.addEventListener("submit", e => movieLookup(e));
-    form.clear();
 }
 
 function movieLookup(e){
@@ -68,7 +66,7 @@ function findMovie(e, movies){
     let cast = document.getElementById("Find-Cast");
     let synopsis = document.getElementById("Find-Synopsis");
     let hiddenDiv = document.querySelector(".Hidden-Div");
-    let found = movies.find(movie => movie.title === e.target.lookup.value)
+    let found = movies.find(movie => movie.title.toLowerCase() === e.target.lookup.value.toLowerCase())
     if (found){
         clearScreen();
         // for(let i = 0; i< hidden.length; i++){
@@ -85,9 +83,11 @@ function findMovie(e, movies){
         cast.textContent = `Cast: ${found.cast}`;
         synopsis.textContent = `Synopsis: ${found.synopsis}`;
         goBack(hiddenDiv);
+        form.reset();
     }
     else {
         alert("Error: Movie not found")
+        form.reset();
     }
 }
 
