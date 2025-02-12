@@ -15,7 +15,7 @@
         "genre": "Action",
         "title": "The Matrix",
         "rating": "R",
-        "image": "./Movie Posters/The_Matrix_Poster.jpg",
+        "image": "./MoviePosters/The_Matrix_Poster.jpg",
         "trailer": "https://www.youtube.com/watch?v=m8e-FF8MsqU",
         "cast": "Keanu Reeves",
         "thumbs_up": 0,
