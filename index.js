@@ -2,25 +2,28 @@ const browse = document.getElementById("browse")
 const enterTitle = document.getElementsByClassName("enter-title");
 const container = document.getElementsByClassName("container");
 const seen = document.getElementById("seen-this-one");
+let backButton = document.getElementById("Back-Button");
+const form = document.getElementById("lookup-form");
 // const dropdowns = document.getElementsByClassName("dropdowns")
 
 //function clearPage{ 
 //which will clear everything except for the h1 heding on the page}
 //code goes here:
 
+let savedEnterTitle, savedContainer, savedScreen;
+
 function clearScreen(){
     // if(browse) {
     //     browse.remove();
     // }
-    if(seen){
-        seen.remove();
-    }
-    for(let i = 0; i < enterTitle.length; i++){
-        enterTitle[i].remove();
-    }
-    for(let i = 0; i < container.length; i++){
-        container[i].remove();
-    }
+    savedEnterTitle = Array.from(enterTitle);
+    savedContainer = Array.from(container);
+    savedSeen = seen;
+
+    savedSeen.remove();
+    savedEnterTitle.forEach(el => el.remove());
+    savedContainer.forEach(el => el.remove());
+
     // for(let i = 0; i < dropdowns.length; i++){
     //     dropdowns[i].remove();
     // }
@@ -43,14 +46,11 @@ function clearScreen(){
 //stretch goal: if it's not in the data base, we allow the user to submit the title online, for us to add
 //code goes here:
 function findForm(){
-    const form = document.getElementById("lookup-form");
-
     form.addEventListener("submit", e => movieLookup(e));
 }
 
 function movieLookup(e){
     e.preventDefault();
-    clearScreen();
     fetch("http://localhost:3000/movies")
     .then(resp => resp.json())
     .then(movies => findMovie(e, movies))
@@ -66,16 +66,15 @@ function findMovie(e, movies){
     let cast = document.getElementById("Find-Cast");
     let synopsis = document.getElementById("Find-Synopsis");
     let hiddenDiv = document.querySelector(".Hidden-Div");
-    let found = movies.find(movie => movie.title === e.target.lookup.value)
-
+    let found = movies.find(movie => movie.title.toLowerCase() === e.target.lookup.value.toLowerCase())
     if (found){
+        clearScreen();
         // for(let i = 0; i< hidden.length; i++){
         //     hidden[i].classList.remove("hidden");
         //     hidden[i].classList.add("shown");
         // }
         hiddenDiv.classList.remove("Hidden-Div");
         hiddenDiv.classList.add("shown");
-
         image.src = found.image;
         title.textContent = found.title; 
         rating.textContent = `Rating: ${found.rating}`;
@@ -83,12 +82,26 @@ function findMovie(e, movies){
         trailer.href = found.trailer;
         cast.textContent = `Cast: ${found.cast}`;
         synopsis.textContent = `Synopsis: ${found.synopsis}`;
+        goBack(hiddenDiv);
+        form.reset();
     }
     else {
-        console.log("Movie not found")
+        alert("Error: Movie not found")
+        form.reset();
     }
 }
 
+function goBack(hiddenDiv){
+    backButton.addEventListener("click", () => {
+        console.log("I was clicked")
+        hiddenDiv.classList.remove("shown");
+        hiddenDiv.classList.add("Hidden-Div");
+        
+        document.body.append(savedSeen);
+        savedEnterTitle.forEach(el => document.body.append(el))
+        savedContainer.forEach(el => document.body.append(el)) 
+    })
+}
 findForm();
 //add.EventListener #3
 //listens for a 'mousover' over the id="movie-details" box
