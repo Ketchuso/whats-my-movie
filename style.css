@@ -9,6 +9,10 @@ h1 {
     position: relative; /* Needed for positioning "Browse Movies" */
 }
 
+h2{
+    font-size: 20px;
+}
+
 /* "Browse Movies" Heading - Aligned to Right Edge of Title */
 #browse {
     font-size: 40px;
@@ -153,22 +157,32 @@ h1 {
     font-style: italic;
 }
 
-.hidden{
-    /* display:none; */
-    padding: 27%;
-    margin-top: -22%;
+.Hidden-Div{
+    display:none;
+    padding: 30%;
+    margin-top: -25%;
+    color:#C8D1F7;
+} 
+
+.shown{
+    display:block;
+    padding: 30%;
+    margin-top: -25%;
     color:#C8D1F7;
 }
 
-.Find-Text{
-    margin-left: 45%;
-    margin-top: -40%;
+#Find-Text{
+    margin-left: 400px;
+    margin-top: -335px;
 }
-
 #Find-Rating{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
+#Find-Trailer{
+    color:#C8D1F7;
+    font-size: 20px;
+}
 body {
     font-family: 'Irish Grover', sans-serif;
     background-color: #292C33;
