@@ -42,7 +42,6 @@ function clearScreen(){
 //if it doesn't find a match "Sorry, not in our data base."
 //stretch goal: if it's not in the data base, we allow the user to submit the title online, for us to add
 //code goes here:
-
 function findForm(){
     const form = document.getElementById("lookup-form");
 
@@ -66,13 +65,23 @@ function findMovie(e, movies){
     let trailer = document.getElementById("Find-Trailer");
     let cast = document.getElementById("Find-Cast");
     let synopsis = document.getElementById("Find-Synopsis");
+    let hiddenDiv = document.querySelector(".Hidden-Div");
     let found = movies.find(movie => movie.title === e.target.lookup.value)
+
     if (found){
+        // for(let i = 0; i< hidden.length; i++){
+        //     hidden[i].classList.remove("hidden");
+        //     hidden[i].classList.add("shown");
+        // }
+        hiddenDiv.classList.remove("Hidden-Div");
+        hiddenDiv.classList.add("shown");
+
         image.src = found.image;
         title.textContent = found.title; 
         rating.textContent = found.rating;
         genre.textContent = found.genre;
         trailer.href = found.trailer;
+        console.log(found.trailer);
         cast.textContent = found.cast;
         synopsis.textContent = found.synopsis;
     }
