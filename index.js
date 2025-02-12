@@ -80,13 +80,11 @@ function findMovie(e, movies){
         hiddenDiv.classList.add("shown");
         image.src = found.image;
         title.textContent = found.title; 
-        rating.textContent = found.rating;
-        genre.textContent = found.genre;
+        rating.textContent = `Rating: ${found.rating}`;
+        genre.textContent = `Genre: ${found.genre}`;
         trailer.href = found.trailer;
-        console.log(found.trailer);
-        cast.textContent = found.cast;
-        synopsis.textContent = found.synopsis;
-        goBack(hiddenDiv);
+        cast.textContent = `Cast: ${found.cast}`;
+        synopsis.textContent = `Synopsis: ${found.synopsis}`;
     }
     else {
         
