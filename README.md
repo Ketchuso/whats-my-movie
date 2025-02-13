@@ -28,7 +28,9 @@ To install this project:
 6. In a new terminal, open the index.html file
 
 **Images**
+
 ![Home Page]([https://i.imgur.com/RZYWdq0.png])
+
 ![Search Popup]([https://i.imgur.com/hPe9sNv.png])
 
 **Credits**
