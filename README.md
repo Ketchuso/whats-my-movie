@@ -31,7 +31,7 @@ To install this project:
 
 ![Home Page]([https://i.imgur.com/RZYWdq0.png])
 
-![Search Popup]([https://i.imgur.com/hPe9sNv.png])
+![Search Popup]((https://i.imgur.com/hPe9sNv.png)])
 
 **Credits**
 
