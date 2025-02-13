@@ -5,14 +5,10 @@ const seen = document.getElementById("seen-this-one");
 let backButton = document.getElementById("Back-Button");
 const form = document.getElementById("lookup-form");
 
-//function clearPage{ 
-//which will clear everything except for the h1 heding on the page:
+//When invoked, function clearScreen will clear everything except for the h1 heading, in order to load other content
 let savedEnterTitle, savedContainer, savedScreen;
 
 function clearScreen(){
-    // if(browse) {
-    //     browse.remove();
-    // }
     //saving the homepage information to restore
     savedEnterTitle = Array.from(enterTitle);
     savedContainer = Array.from(container);
@@ -21,18 +17,9 @@ function clearScreen(){
     savedSeen.remove();
     savedEnterTitle.forEach(el => el.remove());
     savedContainer.forEach(el => el.remove());
-
-    // for(let i = 0; i < dropdowns.length; i++){
-    //     dropdowns[i].remove();
-    // }
 }
 
-//DELIVERABLES:
-// Step 1: fetch the movie data from db.json
-//Step 2: Randomly select movie
-//Step 3: auto-play the trailer 2 seconds after the webpage is fully loaded
-
-// This function ensures that the DOM content is fully loaded first
+// The next three functions work together to select a random movie and auto play its trailer
 document.addEventListener("DOMContentLoaded", () => {
     // Then a random movie is fetched by calling the fetchRandomMOvie function and is displayed 2 seconds after the webpage is fully loaded
     //(setTimeout() receives argument in miliseconds)
@@ -79,15 +66,10 @@ function displayRandomMovie(movie){
     }
 }
 
-//add.EventListener #2
-//listens for a 'form' submit
-//does a strict equality comparison between the movie title entered and the movies in th db.json file (I don't think it should be case sensitive)
-//regardless of whether it finds a match, 
-//calls the clearPage function()
-//if it finds a match, it returns the movie listing page 
-//if it doesn't find a match "Sorry, not in our data base."
-//stretch goal: if it's not in the data base, we allow the user to submit the title online, for us to add
-//code goes here:
+//add.EventListener #1
+//listens for a 'submit' on the movie lookup feature
+//if it finds a match, the movie listing page is returned
+//if it doesn't find a match, an error message is displayed
 function findForm(){
     form.addEventListener("submit", e => movieLookup(e));
 }
@@ -112,10 +94,6 @@ function findMovie(e, movies){
     let found = movies.find(movie => movie.title.toLowerCase() === e.target.lookup.value.toLowerCase())
     if (found){
         clearScreen();
-        // for(let i = 0; i< hidden.length; i++){
-        //     hidden[i].classList.remove("hidden");
-        //     hidden[i].classList.add("shown");
-        // }
         hiddenDiv.classList.remove("Hidden-Div");
         hiddenDiv.classList.add("shown");
         image.src = found.image;
@@ -134,6 +112,9 @@ function findMovie(e, movies){
     }
 }
 
+//addEventListener #2
+//listens for a click on the movie lookup results page
+//handles the event by reloading the content of the home page
 function goBack(hiddenDiv){
     backButton.addEventListener("click", () => {
         console.log("I was clicked")
@@ -146,15 +127,11 @@ function goBack(hiddenDiv){
     })
 }
 findForm();
-//add.EventListener #3
-//listens for a 'mousover' over the id="movie-details" box
-//calls the clearPage function()
-//will grab the <h2> and <p> tags in the "movie-details" div and console log the information on the page
-//will contain an addEventListener for a click on the thumbs or thumbs button
-//code goes here:
 
-// example
-//listens for a 'mousover' over the id="movie-details" box
+//add.EventListener #3
+//listens for a 'mousover', over the id="movie-details" box
+//grabs the randomly selected movie's details
+//displays the reults
 const myDiv = document.getElementById("movie-details");
 function fetchMovieDetails(randomMovie) {
     let title = randomMovie.title;
@@ -162,12 +139,6 @@ function fetchMovieDetails(randomMovie) {
     let cast = `Cast: ${randomMovie.cast}`;
     let synopsis = `Synopsis: ${randomMovie.synopsis}`
 
-    // fetch("http://localhost:3000/movies")
-    // .then(resp => resp.json())
-    // .then(movies => mouse(movies))
-    // .catch(error => console.log(error));
-
-    
     myDiv.addEventListener("mouseover", function(event) {
         document.querySelector(".movie-title").innerText = title;
         document.querySelector(".rating").innerText = rating;
@@ -178,31 +149,3 @@ function fetchMovieDetails(randomMovie) {
         event.target.style.backgroundColor = "#292C33";
     });
 };
-
-
-// function mouse(movies) {
-    // title = movies[randomMovieIndex].title;
-    // rating = movies[randomMovieIndex].rating;
-    //  cast = movies[randomMovieIndex].cast;
-    //  synopsis = movies[randomMovieIndex].synopsis;
-
-
-// });}
-// myDiv.addEventListener("mouseout", function(event) {
-// event.target.style.backgroundColor = "#292C33";
-// });
-
-// example
-//calls the clearPage function()
-//clearScreen()
-
-// example
-//will grab the <h2> and <p> tags in the "movie-details" div and console log the information on the page
-// const element = document.getElementsByTagName("p")
-// const element = document.getElementsByTagName("h2")
-// console.log(element)
-// console.log(element1)
-
-//addEventListener #4?
-//submit 'form' of filters
-
