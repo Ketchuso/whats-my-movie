@@ -54,7 +54,7 @@ function fetchRandomMovie(){
         //Math.floor(...) rounds it down to the nearest whole number, ensuring it's a valid array index.
         let randomMovie = movies[Math.floor(Math.random() * movies.length)];
         console.log(displayRandomMovie(randomMovie));
-        
+        fetchMovieDetails(randomMovie);
     })
 }
 
@@ -155,12 +155,41 @@ findForm();
 
 // example
 //listens for a 'mousover' over the id="movie-details" box
-//const myDiv = document.getElementById("myDiv");
-// myDiv.addEventListener ("mouseover", function(event) {
-// event.target.style.backgroundColor = "lightblue";
-// });
+const myDiv = document.getElementById("movie-details");
+function fetchMovieDetails(randomMovie) {
+    let title = randomMovie.title;
+    let rating = `Rating: ${randomMovie.rating}`;
+    let cast = `Cast: ${randomMovie.cast}`;
+    let synopsis = `Synopsis: ${randomMovie.synopsis}`
+
+    // fetch("http://localhost:3000/movies")
+    // .then(resp => resp.json())
+    // .then(movies => mouse(movies))
+    // .catch(error => console.log(error));
+
+    
+    myDiv.addEventListener("mouseover", function(event) {
+        document.querySelector(".movie-title").innerText = title;
+        document.querySelector(".rating").innerText = rating;
+        document.querySelector(".cast").innerText = cast;
+        document.querySelector(".synopsis").innerText = synopsis;
+        
+    
+        event.target.style.backgroundColor = "#292C33";
+    });
+};
+
+
+// function mouse(movies) {
+    // title = movies[randomMovieIndex].title;
+    // rating = movies[randomMovieIndex].rating;
+    //  cast = movies[randomMovieIndex].cast;
+    //  synopsis = movies[randomMovieIndex].synopsis;
+
+
+// });}
 // myDiv.addEventListener("mouseout", function(event) {
-// event.target.style.backgroundColor = "white";
+// event.target.style.backgroundColor = "#292C33";
 // });
 
 // example
@@ -176,5 +205,4 @@ findForm();
 
 //addEventListener #4?
 //submit 'form' of filters
-
 
