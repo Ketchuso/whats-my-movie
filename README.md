@@ -2,7 +2,7 @@
 
 Want something to watch? Well, look no further. With “What’s My Movie Tonight?” we solve that problem!
 
-As soon as you get to our site, we immediately take the stress away from having to search for a movie trailer!
+As soon as you get to our site, we take the stress away from having to search for a movie trailer!
 
 Two seconds after the page loads, a random movie trailer from our database will automatically begin to play. 
 
@@ -12,7 +12,7 @@ Surprise! The movie details are hidden until you mouseover the box to reveal wha
 
 We also have a feature to lookup a movie in our database by entering the title of the movie in the “Enter Title” search bar.
 
-If we have the movie you are looking for in our directory then we will display a summary of the movie.
+If we have the movie you are looking for in our directory we will display a summary of the movie.
 
 If we don’t, an error message will pop up signifying we don’t have it in our system yet. 
 
