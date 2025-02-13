@@ -24,7 +24,7 @@ To install this project:
 2. Clone the repo to your local PC
 3. In you terminal, run “npm install”
 4. In your terminal, run “npm i json-server”
-5. Enter “json-server –watch db.json”  in your terminal, and in the directory where you cloned the project
+5. Enter “json-server -–watch db.json”  in your terminal, and in the directory where you cloned the project
 6. In a new terminal, open the index.html file
 
 **Credits**
