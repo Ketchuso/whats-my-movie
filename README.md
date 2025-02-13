@@ -1,6 +1,6 @@
 # What’s My Movie Tonight?
 
-Want something to watch? Well, look no further. With “What’s My Movie Tonight?” We solve that problem!
+Want something to watch? Well, look no further. With “What’s My Movie Tonight?” we solve that problem!
 
 As soon as you get to our site, we immediately take the stress away from having to search for a movie trailer!
 
@@ -27,6 +27,6 @@ To install this project:
 5. Enter “json-server –watch db.json”  in your terminal, and in the directory where you cloned the project
 6. In a new terminal, open the index.html file
 
-#Credits
+**Credits**
 
 Group Members: Homeira Kalim, Jay Davis, Curtis John
