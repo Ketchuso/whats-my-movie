@@ -54,6 +54,7 @@ function fetchRandomMovie(){
         //Math.floor(...) rounds it down to the nearest whole number, ensuring it's a valid array index.
         let randomMovie = movies[Math.floor(Math.random() * movies.length)];
         console.log(displayRandomMovie(randomMovie));
+        
     })
 }
 
