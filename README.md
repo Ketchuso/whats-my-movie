@@ -27,12 +27,6 @@ To install this project:
 5. Enter “json-server –watch db.json”  in your terminal, and in the directory where you cloned the project
 6. In a new terminal, open the index.html file
 
-**Images**
-
-![Home Page]([https://i.imgur.com/RZYWdq0.png])
-
-![Search Popup]((https://i.imgur.com/hPe9sNv.png)])
-
 **Credits**
 
 Group Members: Homeira Kalim, Jay Davis, Curtis John
